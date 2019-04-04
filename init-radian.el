@@ -6,13 +6,10 @@
 
 ;; This allows us to instead load a different Emacs configuration by
 ;; exporting USER_EMACS_DIRECTORY to another .emacs.d directory.
-(let ((alternate-user-emacs-directory (getenv "USER_EMACS_DIRECTORY")))
+(if t
 
-  (if alternate-user-emacs-directory
+  (if t
       (progn
-        (setq alternate-user-emacs-directory
-              (file-name-as-directory alternate-user-emacs-directory))
-        (setq user-emacs-directory alternate-user-emacs-directory)
         (setq user-init-file (expand-file-name "init.el" user-emacs-directory))
         (load user-init-file 'noerror 'nomessage))
 
