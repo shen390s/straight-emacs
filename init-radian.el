@@ -44,7 +44,7 @@
              (file-symlink-p user-init-file)))
 
         (unless link-target
-          (error "Init-file %S is not a symlink" this-file))
+          (error "Init-file %S is not a symlink" user-init-file))
 
         (defvar radian-lib-file (expand-file-name
                                  "radian.el"
