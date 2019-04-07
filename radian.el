@@ -4610,6 +4610,9 @@ with which Emacs should be "
 
 ;;; Miscellaneous
 
+(use-package ggtags)
+(use-package rainbow-delimiters)
+
 ;; Enable all disabled commands.
 (setq disabled-command-function nil)
 
