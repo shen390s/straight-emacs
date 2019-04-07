@@ -4610,8 +4610,19 @@ with which Emacs should be "
 
 ;;; Miscellaneous
 
-(use-package ggtags)
-(use-package rainbow-delimiters)
+(use-package ggtags
+  :defer 4
+  :init (progn
+          (defun ggtags-c-mode-hook ()
+            (ggtags-mode 1))
+          (add-hook 'c-mode-hook #'ggtags-c-mode-hook)
+          (add-hook 'c++-mode-hook #'ggtags-c-mode-hook)))
+
+(use-package rainbow-delimiters
+  :defer 4
+  :init (progn
+          (defun on-enable-rainbow-delimiters ()
+            (rainbow-delimiters-mode 1))))
 
 ;; Enable all disabled commands.
 (setq disabled-command-function nil)
