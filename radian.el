@@ -4616,7 +4616,8 @@ with which Emacs should be "
           (defun ggtags-c-mode-hook ()
             (ggtags-mode 1))
           (add-hook 'c-mode-hook #'ggtags-c-mode-hook)
-          (add-hook 'c++-mode-hook #'ggtags-c-mode-hook)))
+          (add-hook 'c++-mode-hook #'ggtags-c-mode-hook)
+          (add-hook 'objc-mode-hook #'ggtags-c-mode-hook)))
 
 (use-package rainbow-delimiters
   :defer 4
@@ -4624,7 +4625,8 @@ with which Emacs should be "
           (defun on-enable-rainbow-delimiters ()
             (rainbow-delimiters-mode 1))
           (add-hook 'c-mode-hook #'on-enable-rainbow-delimiters)
-          (add-hook 'c++-mode-hook #'on-enable-rainbow-delimiters)))
+          (add-hook 'c++-mode-hook #'on-enable-rainbow-delimiters)
+          (add-hook 'objc-mode-hook #'on-enable-ainbow-delimiters)))
 
 ;; Enable all disabled commands.
 (setq disabled-command-function nil)
