@@ -4622,7 +4622,9 @@ with which Emacs should be "
   :defer 4
   :init (progn
           (defun on-enable-rainbow-delimiters ()
-            (rainbow-delimiters-mode 1))))
+            (rainbow-delimiters-mode 1))
+          (add-hook 'c-mode-hook #'on-enable-rainbow-delimiters)
+          (add-hook 'c++-mode-hook #'on-enable-rainbow-delimiters)))
 
 ;; Enable all disabled commands.
 (setq disabled-command-function nil)
