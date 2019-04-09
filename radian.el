@@ -4629,6 +4629,12 @@ with which Emacs should be "
           (add-hook 'c++-mode-hook #'on-enable-rainbow-delimiters)
           (add-hook 'objc-mode-hook #'on-enable-ainbow-delimiters)))
 
+;; use which-key
+(use-package which-key
+  :init (progn
+          (which-key-setup-side-window-right)
+          (which-key-mode 1)))
+
 ;; Enable all disabled commands.
 (setq disabled-command-function nil)
 
