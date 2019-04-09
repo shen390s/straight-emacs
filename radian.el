@@ -4614,7 +4614,8 @@ with which Emacs should be "
   :defer 4
   :init (progn
           (defun ggtags-c-mode-hook ()
-            (ggtags-mode 1))
+            (ggtags-mode 1)
+            (which-function-mode 1))
           (add-hook 'c-mode-hook #'ggtags-c-mode-hook)
           (add-hook 'c++-mode-hook #'ggtags-c-mode-hook)
           (add-hook 'objc-mode-hook #'ggtags-c-mode-hook)))
@@ -4988,6 +4989,10 @@ your local configuration."
 (unless (bound-and-true-p radian--currently-profiling-p)
   (when (= 0 (random 100))
     (straight-prune-build-directory)))
+
+;; start emacs server
+;;
+(server-start)
 
 ;; Enable color theme as late as is humanly possible. This reduces
 ;; frame flashing and other artifacts during startup.
