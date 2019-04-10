@@ -4632,7 +4632,7 @@ with which Emacs should be "
 ;; use which-key
 (use-package which-key
   :init (progn
-          (which-key-setup-side-window-right)
+          (which-key-setup-side-window-right-bottom)
           (which-key-mode 1)))
 
 ;; Enable all disabled commands.
